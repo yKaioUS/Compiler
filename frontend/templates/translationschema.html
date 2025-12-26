@@ -1,0 +1,69 @@
+<!-- frontend/templates/index.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语义分析可视化</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-code"></i> 语义分析可视化工具</h1>
+            <p class="subtitle">上传C代码文件，查看语义分析结果</p>
+        </header>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="upload-section">
+                    <h2><i class="fas fa-upload"></i> 上传C代码文件</h2>
+                    <form id="uploadForm">
+                        <div class="file-input-container">
+                            <input type="file" id="fileInput" accept=".txt,.c" required>
+                            <label for="fileInput" class="file-label">
+                                <i class="fas fa-folder-open"></i>
+                                <span>选择文件</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn compile-btn">
+                            <i class="fas fa-play"></i> 开始编译分析
+                        </button>
+                        <button type="button" id="exampleBtn" class="btn example-btn">
+                            <i class="fas fa-eye"></i> 查看示例
+                        </button>
+                    </form>
+                    
+                    <div class="preview-section">
+                        <h3>代码预览</h3>
+                        <pre id="codePreview">请选择文件...</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="tabs">
+                    <button class="tab active" data-tab="lexical">
+                        <i class="fas fa-search"></i> 语义分析
+                    </button>
+                </div>
+
+                <div class="results-container">
+                    <div class="result-section active" id="lexical-result">
+                        <h3><i class="fas fa-search"></i> 语义分析结果</h3>
+                        <pre class="result-content"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar" id="statusBar">
+            <i class="fas fa-info-circle"></i>
+            <span>准备就绪</span>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/translationschema.js') }}"></script>
+</body>
+</html>
