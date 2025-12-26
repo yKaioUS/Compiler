@@ -22,6 +22,7 @@ myCompiler/
 │   ├── TranslationSchema.h               # 语义分析
 │   ├── TranslationSchema.cpp             # 语义分析C程序入口
 │   └── TranslationSchema.exe             # 语义分析C程序可执行文件
+├── project/                              # 头歌平台提交demo
 ├── frontend/                             # 前端文件夹
 │   ├── static/                           # css、js文件夹
 │   │   ├── css/                          # css文件夹
